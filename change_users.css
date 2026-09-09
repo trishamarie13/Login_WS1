@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  }
+
+body {
+background: linear-gradient(135deg, #ffe0ed, #fff0f7, #ffffff);
+min-height: 100vh;
+padding: 40px 20px;
+}
+
+.container {
+background: #ffffff;
+width: 100%;
+max-width: 600px;
+margin: 30px auto;
+padding: 35px;
+border-radius: 18px;
+box-shadow: 0 10px 30px rgba(255, 105, 180, 0.18);
+border: 1px solid #ffd1e3;
+}
+
+.container h1 {
+color: #e83e8c;
+text-align: center;
+margin-bottom: 25px;
+font-size: 30px;
+}
+
+.container label {
+display: block;
+color: #d63384;
+font-weight: bold;
+margin-top: 15px;
+margin-bottom: 7px;
+}
+
+.container input {
+width: 100%;
+padding: 12px 14px;
+border: 1px solid #ffc1da;
+border-radius: 8px;
+outline: none;
+font-size: 14px;
+color: #555;
+background: #fff;
+transition: 0.3s;
+}
+
+.container input:focus {
+border-color: #ff69b4;
+box-shadow: 0 0 6px rgba(255, 105, 180, 0.25);
+}
+
+
+.container button {
+width: 100%;
+padding: 13px;
+margin-top: 25px;
+border: none;
+border-radius: 9px;
+background: linear-gradient(135deg, #ff69b4, #e83e8c);
+color: white;
+font-size: 15px;
+font-weight: bold;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.container button:hover {
+background: linear-gradient(135deg, #e83e8c, #d63384);
+transform: translateY(-2px);
+box-shadow: 0 5px 15px rgba(232, 62, 140, 0.25);
+}
+
+
+.container p[style*="green"] {
+background: #e8f8ee;
+color: #218838 !important;
+padding: 12px;
+border-radius: 8px;
+text-align: center;
+margin-bottom: 15px;
+}
+
+.container p[style*="red"] {
+background: #ffe5e5;
+color: #d63333 !important;
+padding: 12px;
+border-radius: 8px;
+text-align: center;
+margin-bottom: 15px;
+}
+
+
+.container > a {
+display: block;
+text-align: center;
+margin-top: 15px;
+padding: 11px;
+background: #ffd6e7;
+color: #d63384;
+text-decoration: none;
+border-radius: 8px;
+font-weight: bold;
+transition: 0.3s;
+}
+
+.container > a:hover {
+background: #ffb6d5;
+color: white;
+transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+
+body {
+    padding: 20px 10px;
+}
+
+.container {
+    padding: 25px 20px;
+    margin: 15px auto;
+}
+
+.container h1 {
+    font-size: 25px;
+}
+
+}
