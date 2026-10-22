@@ -1,0 +1,674 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    color: #333;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background: #2c3e50;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+}
+
+.sidebar-logo {
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-logo img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.sidebar-logo h2 {
+    font-size: 20px;
+    color: white;
+}
+
+.sidebar-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #ff69b4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.profile-details {
+    overflow: hidden;
+}
+
+.profile-details h3 {
+    font-size: 14px;
+    color: white;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.profile-details p {
+    font-size: 12px;
+    color: #bdc3c7;
+}
+
+.sidebar-menu {
+    padding: 15px 10px;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 15px;
+    margin-bottom: 5px;
+    border-radius: 7px;
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.sidebar-item:hover {
+    background: #34495e;
+    color: white;
+}
+
+.sidebar-item.active {
+    background: #ff69b4;
+    color: white;
+}
+
+.sidebar-item span:first-child {
+    width: 22px;
+    text-align: center;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    padding: 15px 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logout-item:hover {
+    background: #e74c3c;
+    color: white;
+}
+
+/* MAIN CONTENT */
+
+.teacher-content {
+    margin-left: 250px;
+    min-height: 100vh;
+    padding: 40px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* WELCOME */
+
+.welcome {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.welcome h1 {
+    color: #2c3e50;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.welcome p {
+    color: #777;
+    font-size: 15px;
+}
+
+/* INFORMATION CARD */
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+    color: #2c3e50;
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.info:last-child {
+    border-bottom: none;
+}
+
+.info strong {
+    color: #2c3e50;
+}
+
+.info span {
+    color: #666;
+}
+
+/* GRADE CARDS */
+
+.grade-cards {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.grade-card {
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grade-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.grade-card h2 {
+    color: #2c3e50;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.grade-card p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.grade-card a {
+    display: inline-block;
+    padding: 11px 20px;
+    background: #ff69b4;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.2s ease;
+}
+
+.grade-card a:hover {
+    background: #ff4d94;
+}
+
+/* GRADES SECTION */
+
+.grades-section {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.grades-title {
+    color: #2c3e50;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+/* GRADES TABLE CONTAINER */
+
+.grade-table-container {
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    overflow-x: auto;
+}
+
+/* GRADES TABLE */
+
+.grade-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 750px;
+}
+
+.grade-table th {
+    background: #2c3e50;
+    color: white;
+    padding: 14px 12px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.grade-table th:first-child {
+    border-top-left-radius: 6px;
+}
+
+.grade-table th:last-child {
+    border-top-right-radius: 6px;
+}
+
+.grade-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #eeeeee;
+    color: #555;
+    font-size: 14px;
+}
+
+.grade-table tbody tr:hover {
+    background: #fff5fa;
+}
+
+.grade-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* GRADE VALUE */
+
+.grade-value {
+    font-weight: bold;
+    color: #ff4d94;
+}
+
+/* EDIT GRADE BUTTON */
+
+.edit-grade-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #ff69b4;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: background 0.2s ease;
+}
+
+.edit-grade-btn:hover {
+    background: #ff4d94;
+}
+
+/* ADD GRADE BUTTON */
+
+.add-grade-btn {
+    display: inline-block;
+    padding: 11px 20px;
+    background: #ff69b4;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: background 0.2s ease;
+}
+
+.add-grade-btn:hover {
+    background: #ff4d94;
+}
+
+/* GRADE FORM */
+
+.grade-form {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.grade-form h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 25px;
+}
+
+.grade-form-group {
+    margin-bottom: 20px;
+}
+
+.grade-form label {
+    display: block;
+    color: #2c3e50;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.grade-form input,
+.grade-form select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cccccc;
+    border-radius: 7px;
+    font-size: 14px;
+    background: white;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grade-form input:focus,
+.grade-form select:focus {
+    border-color: #ff69b4;
+    box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.15);
+}
+
+.grade-form input::placeholder {
+    color: #aaa;
+}
+
+/* FORM BUTTONS */
+
+.grade-form-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.grade-submit-btn {
+    border: none;
+    padding: 12px 22px;
+    background: #ff69b4;
+    color: white;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.grade-submit-btn:hover {
+    background: #ff4d94;
+}
+
+.cancel-grade-btn {
+    display: inline-block;
+    padding: 12px 22px;
+    background: #95a5a6;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.2s ease;
+}
+
+.cancel-grade-btn:hover {
+    background: #7f8c8d;
+}
+
+/* ERROR MESSAGE */
+
+.grade-error {
+    background: #fdeaea;
+    color: #c0392b;
+    border: 1px solid #f5c6cb;
+    border-radius: 7px;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* SUCCESS MESSAGE */
+
+.grade-success {
+    background: #eafaf1;
+    color: #27ae60;
+    border: 1px solid #b7e4c7;
+    border-radius: 7px;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* NO GRADES */
+
+.no-grades {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    color: #777;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* BACK BUTTON */
+
+.back-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #2c3e50;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    font-size: 14px;
+    margin-top: 20px;
+    transition: background 0.2s ease;
+}
+
+.back-btn:hover {
+    background: #34495e;
+}
+
+/* GENERAL BUTTON */
+
+button {
+    font-family: Arial, sans-serif;
+}
+
+/* RESPONSIVE - TABLET */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 220px;
+    }
+
+    .teacher-content {
+        margin-left: 220px;
+        padding: 30px;
+    }
+
+    .grade-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome h1 {
+        font-size: 26px;
+    }
+}
+
+/* RESPONSIVE - MOBILE */
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: auto;
+    }
+
+    .sidebar-logo {
+        padding: 20px;
+    }
+
+    .sidebar-profile {
+        justify-content: center;
+    }
+
+    .sidebar-menu {
+        padding: 10px 15px;
+    }
+
+    .sidebar-bottom {
+        margin-top: 0;
+        padding: 10px 15px;
+    }
+
+    .teacher-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .welcome {
+        padding: 22px;
+    }
+
+    .welcome h1 {
+        font-size: 23px;
+    }
+
+    .card {
+        padding: 22px;
+    }
+
+    .card h2 {
+        font-size: 20px;
+    }
+
+    .info {
+        display: block;
+        padding: 13px 0;
+    }
+
+    .info strong {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .grade-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .grade-card {
+        padding: 20px;
+    }
+
+    .grade-table-container {
+        padding: 10px;
+    }
+
+    .grade-form {
+        padding: 22px;
+    }
+
+    .grade-form-buttons {
+        flex-direction: column;
+    }
+
+    .grade-submit-btn,
+    .cancel-grade-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 450px) {
+
+    .teacher-content {
+        padding: 15px;
+    }
+
+    .welcome {
+        padding: 20px;
+    }
+
+    .welcome h1 {
+        font-size: 21px;
+    }
+
+    .welcome p {
+        font-size: 14px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .grade-card {
+        padding: 18px;
+    }
+
+    .grade-card h2 {
+        font-size: 19px;
+    }
+
+    .grade-form {
+        padding: 18px;
+    }
+
+    .grade-form h2 {
+        font-size: 21px;
+    }
+
+    .sidebar-logo img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .sidebar-logo h2 {
+        font-size: 18px;
+    }
+}
