@@ -1,5 +1,4 @@
-
 <?php
-header("Location: login.php");
+ob_start();
+header("Location: /login.php");
 exit;
-?>
